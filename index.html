@@ -39,102 +39,587 @@
 			<div class="slides">
 
 				<!-- begin editable section -->
-				<section class="center">
-					<h1>The Starter Project</h1>
-					<ul>
-						<li><a href="Base Starting Project/final.html">Link to the starter project</a></li>
-						<li>This is the starting project that you'll use to build your content chunks. It's also the project that the learners will come to Hackapalooza with! Make sure your content and code (CSS in particular) is modular so that it doesn't affect other parts of the site—only the parts you're modifying!</li>
-					</ul>
-				</section>
-				<!-- each <section> element creates a new slide. -->
 				<section class="cover">
-					<h1>Introduction to HTML and CSS</h1>
+					<h1>From Webpage to Website</h1>
 					<div class="instructors">
 						<h2>Your Instructor:</h2>
 						<ul>
 							<li>
-								<img src="content/images/heather_avatar.jpg" alt="">
+								<img src="content/images/photo_tthornton.jpg" alt="">
 								<div class="instructor-info">
-									<h3>Heather Payne</h3>
-									<p>heather@heatherpayne.ca</p>
-									<p><a href="http://heatherpayne.ca">heatherpayne.ca</a></p>
-									<p><a href="https://twitter.com/heatherpayne">@heatherpayne</a></p>
-								</div>
-							</li>
-							<li>
-								<img src="content/images/heather_avatar.jpg" alt="">
-								<div class="instructor-info">
-									<h3>Heather Payne</h3>
-									<p>heather@heatherpayne.ca</p>
-									<p><a href="http://heatherpayne.ca">heatherpayne.ca</a></p>
-									<p><a href="https://twitter.com/heatherpayne">@heatherpayne</a></p>
+									<h3>Tessa Thornton</h3>
+									<p>tessathornton@gmail.com</p>
+									<p><a href="http://tessathornton.com">tessathornton.com</a></p>
+									<p><a href="https://twitter.com/tessthornton">@tessthornton</a></p>
 								</div>
 							</li>
 						</ul>
-						<div class="credits">
-							<p>Thanks to <a href="#">Pearl Chen</a> and <a href="#">Mark Reale</a> for creating the foundation for today's content</p>
-						</div>
 					</div>
 
 				</section>
 
-				<section>
-					<h1>Example Course Outline</h1>
-					<h2>Morning</h2>
-					<ul>
-						<li>Intro to HTML</li>
-						<li>Write the HTML for your first project</li>
-						<li>Intro to CSS</li>
-					</ul>
-					<h2>Afternoon</h2>
-					<ul>
-						<li>More CSS</li>
-						<li>Final touches</li>
-						<li>Fin! And next steps</li>
-					</ul>
-				</section>
+				<section data-markdown>
+					# What's the difference between a web site and a web page?
 
-				<section class="center">
-					<h1>This slide is centered because it has the class "center" on the &lt;section> element!</h1>
-				</section>
+					Not much! A website is made up of one or more web pages.
 
-				<section>
-					<h1>A slide with an Image</h1>
-					<img src="content/images/blank_output.jpg">
-				</section>
+					What's a web page?
 
-				<section>
-					<h1>A slide with some HTML Code</h1>
-					<pre><code>
-<!-- remember to escape the < character -->
-&lt;!doctype html>
-&lt;head>
-  &lt;title>Ladies Learning Code HTML and CSS&lt;/title>
-  &lt;style>
-    p {
-    color: red;
-    text-decoration: underline;
-    }
-  &lt;/style>
-&lt;/head>
-&lt;body>
-  &lt;p>This is a paragraph&lt;/p>
-&lt;/body>
-&lt;/html>
-					</code></pre>
+					- for our purposes, a web page represents one .html file
+					- in the browser, we will visit each page at a different url: mywebsite.com/about.html, mywebsite.com/contact.html
+					- we can link between pages using `&lt;a>` tags, the `href` will be the name of the .html file
+					- `&lt;a href="about.html">About&lt;/a>` will link the user to our about.html file
 				</section>
 
 				<section data-markdown>
-					# You can write your slides in mardown if you add the `data-markdown` attribute
+					# We're going to add a navigation menu to our web page to link to other web pages
 
-					- markdown makes it a bit easier to write content for the web
-					- learn more about [markdown syntax](https://daringfireball.net/projects/markdown/syntax)
+					We already have a navigation menu, but currently it only links to different sections on the same web page
 
-					## A level 2 header in markdown
+					Let's create some new web pages and update our links to point to them
+				</section>
 
-					```
-						\\ some code in markdown
-					```
+				<section data-markdown>
+					# Creating new web pages
+
+					- We're going to create 3 new files: about.html, contact.html, and products.html
+					- We'll create them by copying index.html
+					- File > Save As
+				</section>
+
+				<section data-markdown>
+					# Editing our new pages
+
+					- Let's make some minor edits to the three files so we can tell them apart.
+					- For now, let's just change the text in the `&lt;h1>` tag to the name of the page
+				</section>
+
+				<section data-markdown>
+					# Editing the links in our navigation menu
+
+					- open up index.html
+					- delete the link to 'Favourites'
+					- change the `href` for the 'About' and 'Contact' links to point to the pages you just created
+					- Ex. `href="#about"` becomes `href="about.html"`
+					- add a link to "home" with the `href` value `"index.html"`
+					- add a link to "products" with the `href` value `"products.html"`
+				</section>
+
+				<section data-markdown>
+					# Navigation menu with updated links
+
+							&lt;ul class="menu">
+								&lt;li>&lt;a href="index.html">Home&lt;/a>&lt;/li>
+								&lt;li>&lt;a href="about.html">About&lt;/a>&lt;/li>
+								&lt;li>&lt;a href="products.html">Products&lt;/a>&lt;/li>
+								&lt;li>&lt;a href="contact.html">Contact&lt;/a>&lt;/li>
+							&lt;/ul>
+
+				</section>
+
+				<section data-markdown>
+					# We need to change our menu to look like this:
+
+					![image](content/images/nav_final.png)
+
+					So we'll need to separate the contact link from the rest of the links
+
+					Which means we need to wrap our menu in another element
+				</section>
+
+				<section data-markdown>
+					# The `&lt;nav>` element
+
+					- thankfully, there's a special html element specifically for navigation content: `&lt;nav>`
+					- we'll wrap our menu in a `&lt;nav>` element, and give it a class of "main-navigation"
+					- Let's also move the "contact" link outside the `&lt;ul>`, and remove the "menu" class, because we don't need it anymore
+							&lt;nav class="main-navigation">
+								&lt;ul>
+									&lt;li>&lt;a href="index.html">Home&lt;/a>&lt;/li>
+									&lt;li>&lt;a href="about.html">About&lt;/a>&lt;/li>
+									&lt;li>&lt;a href="products.html">Products&lt;/a>&lt;/li>
+								&lt;/ul>
+								&lt;a href="contact.html">Contact&lt;/a>
+							&lt;/nav>
+				</section>
+
+				<section data-markdown>
+					# Adjusting the CSS
+
+					Now we need to adjust the CSS to match the markup changes we made
+
+					- change `.menu` to `.main-navigation`
+					- move list-related styles from `.menu` to `.main-navigation ul` (because .main-navigation is the `&lt;nav>` item, not the `&lt;ul>` item)
+					- remove the padding around list items
+
+							.main-navigation {
+						      border-bottom: 1px solid #434A5C;
+						      background: #ffffff;
+						      position: fixed;
+						      top: 0;
+						      left: 0;
+						      width: 100%;
+						    }
+						    .main-navigation ul {
+						      list-style: none;
+						      margin: 0;
+						      padding: 0;
+						    }
+						    .main-navigation li {
+						      display: inline-block;
+						    }
+				</section>
+
+				<section data-markdown>
+					Next, let's add some space at the sides of the navigation
+
+					Remember, CSS shorthand for padding lets us set the top and bottom values and then the left and right values
+
+							.main-navigation {
+								...
+								padding: 0 50px;
+							}
+
+					Remember how we removed padding from the `&lt;li>` elements earlier? Let's add it back on, but to the `&lt;a>` elements instead
+
+							.main-navigation a {
+								...
+								padding: 20px 35p;
+							}
+
+					This should add 20px to the top and bottom, and 35px to the left and right
+
+					But it only seems to work on the left and right...
+
+					![image](content/images/inlinefail.png)
+				</section>
+
+				<section data-markdown class="center">
+					# Time for a short sidebar...
+					## `inline` vs. `block` elements in HTML
+				</section>
+
+				<section data-markdown>
+					# Inline vs. Block
+
+					Let's compare two common elements in HTML: the `&lt;p>` element and the `&lt;a>` element
+
+							&lt;a href="#">Link 1&lt;/a>
+							&lt;a href="#">Link 2&lt;/a>
+							&lt;p>Lorem ipsum dolor sit amet...&lt;/p>
+							&lt;p>...perferendis ipsum quia voluptates quo sint at animi dolorum.&lt;/p>
+
+					## What's the difference? (other than the colour and underline)
+					![block vs inline](content/images/bvsinline.png)
+				</section>
+
+				<section data-markdown>
+					![block vs inline](content/images/bvsinline.png)
+
+					- the two `&lt;a>` elements are hanging out side-by-side
+					- but the two `&lt;p>` elements are stacked on top of each other
+					- they behave differently because `&lt;a>` is an **inline** element and `&lt;p>` is a **block** element
+					- **block** elements take up the full width of their containers, and create a new line break
+					- **inline** elements don't create line breaks and take up only as much horizontal space as they need
+				</section>
+
+				<section data-markdown>
+					This can be easier to visualize if we put an **inline** element *inside* a **block** element
+
+					![nested](content/images/oneline.png)
+
+					The `&lt;a>` element sits on the same line as the surrounding text, and doesn't break the flow of the text.
+
+					However, if we nest a **block** element inside another **block** element...
+
+							&lt;div>This is some text in a div.
+							&lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. &lt;/p>
+							&lt;/div>
+
+					The block element creates a new line:
+
+					![nested2](content/images/twolines.png)
+				</section>
+
+				<section data-markdown>
+					This can have some interesting consequences when we try to apply styling to different types of elements.
+
+					For example, what happens if we add some padding around our nested `&lt;a>` element?
+
+							  a {
+							    padding: 20px;
+							    background: red;
+							  }
+					![no break](content/images/nobreak.png)
+
+					We can see the padding on all 4 sides of our element, but the element refuses to disrupt the spacing of the line, so we're not getting the proper effect for the padding.
+
+				</section>
+
+			<!-- 	<section data-markdown>
+					# Solution: inline-block
+
+					Luckily, there's a happy medium between block and inline elements, unsurprisingly called "inline-block". If we change the `display` property of our `&lt;a>` tag to `inline-block`, it will stay on one line, but will respect the padding we've added to the top and bottom.
+
+							a {
+								display: inline-block;
+								padding: 20px;
+							}
+
+					![ib](content/images/ib.png)
+				</section> -->
+
+				<section data-markdown>
+					# What were we talking about again?
+
+					Those links in our navigation that weren't respecting the padding we wanted to add to the top and bottom!
+
+					So how do we fix this?
+				</section>
+
+				<section data-markdown>
+					Let's add `display: block;` to the `&lt;a>` elements in our navigation, to force them to accept our padding
+
+					They won't create line breaks, because their parent elements are set to `display: inline-block;`
+
+							.main-navigation a {
+								padding: 20px 35px;
+								display: block;
+							}
+
+					![better](content/images/addblock.png)
+				</section>
+
+				<section data-markdown>
+					Now we need to get the `&lt;ul>` off to the left and the "contact" link off to the right.
+
+					We can do this by *floating* the list to the left and the link to the right.
+
+							.main-navigation ul {
+								...
+								float: left;
+							}
+
+							.main-navigation > a {
+								float: right;
+							}
+
+					Wait a minute, why did that work?
+
+					Shouldn't *all* the `&lt;a>` tags have floated to the right?
+				</section>
+
+				<section data-markdown>
+					# CSS Direct Child selector
+
+							.main-navigation > a {
+								float: right;
+							}
+
+					The `>` character is one you might not have come across yet. It's an advanced CSS selector that specifies that we only want to look *one level deep* for children.
+
+					This is read as "anchor tags which are direct children of elements with the class main-navigation"
+
+					This selector **will not** apply to the other `&lt;a>` tags in our markup, because they are nested within `&lt;li>` tags, and therefore not direct children.
+				</section>
+
+				<section data-markdown>
+					# Box-sizing
+
+					How come our contact link is being cut off?
+
+					![cut off](content/images/contactbroke.png)
+
+					It has to do with the way widths are calculated in CSS.
+
+					Remember how we set the .main-navigation item to `width: 100%;` and then added 50px of padding to each side?
+
+					Turns out, that caused some weird math to happen.
+
+					**100% + 50px + 50px = more than 100%**
+
+					So since our .main-navigation item is wider than the page, our right-most element is being cut off
+				</section>
+
+				<section data-markdown>
+					# Box sizing continued
+
+					So do we have to do the math and subtract 100px from 100%?
+
+					**Nope (though you could)**
+
+					We can force the browser to do the math for us and make sure padding is calculated *within* the element, instead of making the element bigger.
+
+					We do this with the `box-sizing` property.
+
+					Add `box-sizing: border-box;` to the main-navigation element
+
+							.main-navigation {
+								box-sizing: border-box;
+							}
+				</section>
+
+				<section data-markdown>
+					![floats](content/images/floats.png)
+
+					Looking good! Let's just remove that black border at the bottom.
+
+					Delete `border-bottom: 1px solid #434A5C;` from the .main-navigation selector.
+				</section>
+
+				<section data-markdown>
+					# Hover styles
+
+					Next, we'll add some styles to the hover state for our links.
+
+					We can style the hover state of an element using th CSS *pseudo-selector* `:hover`
+
+					Pseudo-selectors always start with a ":" and come immediately after the selector preceding them.
+
+					Let's change the background colour of our links when they're hovered over.
+
+							.main-navigation a:hover {
+								background-color: #ff7ee5;
+							}
+				</section>
+
+				<section data-markdown>
+					# Active Link Styles
+
+					It would be nice if our users had an easy way to tell which page they were on. We can style the current link differently to make this more obvious.
+
+					First of all, let's copy the markup changes we made in index.html to our other HTML files
+
+					Now, we're going to add a class to the selected link on each page. For example, on index.html we'll add the class "active" to the link that goes to "Home".
+
+					      &lt;li>&lt;a class="active" href="index.html">Home&lt;/a>&lt;/li>
+
+					 Do the same for your other pages.
+				</section>
+
+				<section data-markdown>
+					# Active Link Styles Continued
+
+					Let's make a selector for the active link. We'll use the . syntax to specify we only want links "with the class of active"
+
+						.main-navigation a.active {
+							background: #D300A9;
+							color: white;
+						}
+
+				</section>
+
+				<section data-markdown>
+					![looksgood](content/images/navbug.png)
+
+					Looks great!
+
+					Except... what's with that white space between the two links?
+
+					This is a bit of an annoying bug that has to do with the fact that our `&lt;li>` elements are set to `display: inline-block;`. The browser adds about 4px of space between the elements. Not good!
+
+					There's a simple solution, fortunately: set the `font-size` on the parent element to 0, and then set it back to 16 on the list item elements.
+
+							.main-navigation ul {
+								...
+								font-size: 0;
+							}
+							.main-navigation li {
+								...
+								font-size: 16px;
+							}
+				</section>
+
+				<section data-markdown>
+					# Part 2: Making a drop-down menu
+
+					Here's the fun part: we're going to add a "drop-down" menu to our navigation, so that users can see links to sub-pages when they hover over the "Products" link.
+
+					![dropdown](content/images/dropdown.png)
+				</section>
+
+				<section data-markdown>
+					# Markup for drop-down
+
+					The first step for making a dropdown menu is adding the new markup to our index.html file.
+
+					Since the sub-pages are nested under the "Products" page, we're going to nest a list of subpages *inside* the "Products" list item. This is called a "nested list" and is a common way of marking up lists of lists.
+
+						&lt;li>
+					        &lt;a href="products.html">Products&lt;/a>
+					        &lt;ul>
+					          &lt;li>&lt;a href="#">Category 1&lt;/a>&lt;/li>
+					          &lt;li>&lt;a href="#">Category 2&lt;/a>&lt;/li>
+					          &lt;li>&lt;a href="#">Category 3&lt;/a>&lt;/li>
+					        &lt;/ul>
+					      &lt;/li>
+				</section>
+
+				<section data-markdown>
+					![dropdown](content/images/dropdown1.png)
+
+					Doesn't look so great yet.
+
+					Let's get those list items to stack on top of each other rather than sitting side-by-side.
+
+					We'll bring back an old friend: `display: block;`
+
+					Let's write a selector for the list items *inside* list items (nested `&lt;li>` tags)
+
+							.main-navigation li ul li {
+								display: block;
+							}
+				</section>
+
+				<section data-markdown>
+					# Absolute positioning
+
+					Ok, here's where things get a little weird.
+
+					Right now, our submenu is pushing the rest of the page down. We don't want that. We want it to stick to its parent and overlay on top of the rest of the page.
+
+					To force an element to anchor itself to another without interfering with its surroundings, we use `position: absolute;`
+
+					Absolutely positioned elements are positioned in relation to another element, but the rest of the page doesn't leave any space for the element, so it just sits on top.
+
+				</section>
+
+				<section data-markdown>
+					# Absolute positioning continued
+
+					Let's add `position: absolute;` to our nested list.
+
+							.main-navigation li ul {
+								position: absolute;
+							}
+
+					It will be positioned in relation to its nearest ancestor, which in this case is the parent `&lt;li>` item.
+
+					We also have to explicitly add our white background back in, since it's no longer inheriting it from its parent.
+
+							.main-navigation li ul {
+								background: white;
+							}
+				</section>
+
+				<section data-markdown>
+					# Showing our dropdown on hover
+
+					We only want our dropdown list to show up when the user hovers over it, so its default state should be hidden. To make an element disappear, we can set the `display` property to `none`:
+
+							.main-navigation li ul {
+								display: none;
+							}
+
+					Next, we can take advantage of the `:hover` pseudo-selector to set the `display` property to `block` **only when the user hovers over the list item**.
+
+							.main-navigation li:hover ul {
+								display: block;
+							}
+				</section>
+
+				<section data-markdown>
+					![dropdown](content/images/dropdown3.png)
+
+					# Awesome work! A dropdown menu!
+
+					There's just one thing we could do to make our menu a little bit more awesome...
+				</section>
+
+				<section data-markdown>
+					# Responsive design
+
+					Our menu doesn't really look that great if we resize it down to the width of a mobile phone
+
+					![looks bad](content/images/resp1.png)
+				</section>
+
+				<section data-markdown>
+					Fortunately, CSS gives us a way to change our styles depending on how wide a user's browser is. There are two steps to this process.
+
+					Add the following code to the `&lt;head>` section of your html:
+
+							&lt;meta name="viewport" content="width=device-width, initial-scale=1">
+
+					(this prevents phones from zooming out and showing your website super tiny)
+
+					And add this code to the bottom of your CSS file:
+
+							@media all and (max-width: 699px) {
+								// code goes here
+							}
+
+					The code between the two curly brackets will only apply when the screen is narrower than 700px.
+				</section>
+
+				<section data-markdown>
+					# Responsive Design
+
+					The first thing we want to change for mobile users is the fact that the menu is stuck to the stop of the screen. This would be annoying if you had a really small screen. We got it to stick to the top of the browser using `position: fixed`, we can undo this using `position: static;`
+
+							.main-navigation {
+								position: static;
+							}
+
+					We'll lose our white background doing this, that's because we have floated elements inside our container. There are a couple workarounds for this, but in our case, we're just going to unfloat the elements, becasue we want to stack all the links on top of each other.
+
+							.main-navigatoin ul {
+								float: none;
+							}
+							.main-navigation > a {
+								float: none;
+							}
+				</section>
+
+				<section data-markdown>
+					![resp2](content/images/resp2.png)
+
+					Let's get all those list items to stack on top of each other too. Our old friend `display: block;` can help us here too:
+
+							.main-navigation li {
+								display: block;
+							}
+				</section>
+
+				<section data-markdown>
+					![resp3](content/images/resp3.png)
+
+					We can also get rid of the white space at the sides by cancelling out that 50px of padding we added earlier:
+
+							.main-navigation {
+								padding: 0;
+							}
+				</section>
+
+				<section data-markdown>
+					![resp4](content/images/resp4.png)
+
+					Okay! All that's left to do is to make our sub-menu behave more normally on mobile. Let's undo all this `position: absolute;` stuff and make the submenu push the items beneath it down like a normal element.
+
+							.main-navigation li ul {
+								position: static;
+							}
+
+				</section>
+
+				<section data-markdown>
+					![resp5](content/images/resp5.png)
+
+					You might be wondering how users are going to hover over the parent list item on their mobile phones.
+
+					The short answer is: don't worry about it too much. Most mobile browsers translate `:hover` events into touch events, so when a user touches on the "products" list item, it will apply the `:hover` styles you've added and open up the menu. This doesn't work on 100% of browsers, so if you're worried about it, you can either choose to show the submenu by default on mobile, or use JavaScript to attach the styles to a `touch` event.
+				</section>
+
+				<section data-markdown>
+					# That's It!
+
+					## What did we learn today? (hopefully)
+
+					- `display: block;` vs `display: inline;`
+					- CSS direct child selectors (`>`)
+					- CSS pseudo-selectors (`:`)
+					- `position: absolute;` vs `position: static;`
+					- CSS media queries (`@media ...`)
 				</section>
 
 				<!-- end editable section -->
