@@ -107,7 +107,7 @@
 
 				<section data-markdown>
 					# Navigation menu with updated links
-
+						&lt;!doctype html>
 							&lt;ul class="menu">
 								&lt;li>&lt;a href="index.html">Home&lt;/a>&lt;/li>
 								&lt;li>&lt;a href="about.html">About&lt;/a>&lt;/li>
@@ -133,6 +133,7 @@
 					- thankfully, there's a special html element specifically for navigation content: `&lt;nav>`
 					- we'll wrap our menu in a `&lt;nav>` element, and give it a class of "main-navigation"
 					- Let's also move the "contact" link outside the `&lt;ul>`, and remove the "menu" class, because we don't need it anymore
+							&lt;!doctype html>
 							&lt;nav class="main-navigation">
 								&lt;ul>
 									&lt;li>&lt;a href="index.html">Home&lt;/a>&lt;/li>
@@ -176,14 +177,12 @@
 					Remember, CSS shorthand for padding lets us set the top and bottom values and then the left and right values
 
 							.main-navigation {
-								...
 								padding: 0 50px;
 							}
 
 					Remember how we removed padding from the `&lt;li>` elements earlier? Let's add it back on, but to the `&lt;a>` elements instead
 
 							.main-navigation a {
-								...
 								padding: 20px 35p;
 							}
 
@@ -204,6 +203,7 @@
 
 					Let's compare two common elements in HTML: the `&lt;p>` element and the `&lt;a>` element
 
+						&lt;!doctype html>
 							&lt;a href="#">Link 1&lt;/a>
 							&lt;a href="#">Link 2&lt;/a>
 							&lt;p>Lorem ipsum dolor sit amet...&lt;/p>
@@ -232,6 +232,7 @@
 
 					However, if we nest a **block** element inside another **block** element...
 
+							&lt;!doctype html>
 							&lt;div>This is some text in a div.
 							&lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. &lt;/p>
 							&lt;/div>
@@ -296,7 +297,6 @@
 					We can do this by *floating* the list to the left and the link to the right.
 
 							.main-navigation ul {
-								...
 								float: left;
 							}
 
@@ -392,7 +392,8 @@
 
 					Now, we're going to add a class to the selected link on each page. For example, on index.html we'll add the class "active" to the link that goes to "Home".
 
-					      &lt;li>&lt;a class="active" href="index.html">Home&lt;/a>&lt;/li>
+							&lt;!doctype html>
+				      &lt;li>&lt;a class="active" href="index.html">Home&lt;/a>&lt;/li>
 
 					 Do the same for your other pages.
 				</section>
@@ -421,11 +422,9 @@
 					There's a simple solution, fortunately: set the `font-size` on the parent element to 0, and then set it back to 16 on the list item elements.
 
 							.main-navigation ul {
-								...
 								font-size: 0;
 							}
 							.main-navigation li {
-								...
 								font-size: 16px;
 							}
 				</section>
