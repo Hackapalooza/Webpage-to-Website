@@ -15,6 +15,11 @@
 		<link rel="stylesheet" href="framework/css/theme/llc.css" id="theme">
 		<link rel="stylesheet" href="framework/lib/css/monokai.css">
 		<link rel="stylesheet" href="framework/css/overrides.css">
+		<style>
+			.doctype {
+				display: none;
+			}
+		</style>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -194,7 +199,7 @@
 				</section>
 
 				<section data-markdown class="center">
-					# Time for a short sidebar...
+					# Time for a short aside...
 					## `inline` vs. `block` elements in HTML
 				</section>
 
@@ -257,19 +262,6 @@
 
 				</section>
 
-			<!-- 	<section data-markdown>
-					# Solution: inline-block
-
-					Luckily, there's a happy medium between block and inline elements, unsurprisingly called "inline-block". If we change the `display` property of our `&lt;a>` tag to `inline-block`, it will stay on one line, but will respect the padding we've added to the top and bottom.
-
-							a {
-								display: inline-block;
-								padding: 20px;
-							}
-
-					![ib](content/images/ib.png)
-				</section> -->
-
 				<section data-markdown>
 					# What were we talking about again?
 
@@ -289,6 +281,18 @@
 							}
 
 					![better](content/images/addblock.png)
+				</section>
+
+				<section data-markdown>
+					# Wait, inline-block??
+
+					There's a happy medium between block and inline elements, unsurprisingly called "inline-block". We changed the `display` property of our `&lt;li>` tags to `inline-block`, it stays on one line, but respects the padding we've added to the top and bottom.
+
+							.menu li {
+								display: inline-block;
+							}
+
+					![ib](content/images/ib.png)
 				</section>
 
 				<section data-markdown>
